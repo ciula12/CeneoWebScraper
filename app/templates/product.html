@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Opinie o produkcie{% endblock %}
 {% block script %}
+
 <script>
     $(document).ready( function () {
         $('#opinions').DataTable();
@@ -8,22 +9,42 @@
 </script>
 {% endblock %}
 {% block content %}
-<table id='opinions' class="table table-striped table-warning">
+<h3>{{product_code}}</h3>
+<table id='opinions' class="table" >
     <thead>
         <tr>
-            <th>Kol1</th>
-            <th>Kol2</th>
+            <th>Column_1</th>
+            <th>Column_2</th>
+            <th>Column_3</th>
+            <th>Column_4</th>   
         </tr>
     </thead>    
-    <tbody>
+    <tbody >
         <tr>
-            <td>Data1</td>
-            <td>Data2</td>
+            <td>Data_1</td>
+            <td>Data_2</td>
+            <td>Data_3</td>
+            <td>Data_4</td>
         </tr>
         <tr>
-            <td>Data3</td>
-            <td>Data4</td>
+            <td>Data_1.2</td>
+            <td>Data_2.2</td>
+            <td>Data_3.2</td>
+            <td>Data_4.2</td>
+        </tr>
+        <tr>
+            <td>Data_1.3</td>
+            <td>Data_2.3</td>
+            <td>Data_3.3</td>
+            <td>Data_4.3</td>
+        </tr>
+        <tr>
+            <td>Data_1.4</td>
+            <td>Data_2.4</td>
+            <td>Data_3.4</td>
+            <td>Data_4.4</td>
         </tr>
     </tbody>
 </table>
+
 {% endblock %}

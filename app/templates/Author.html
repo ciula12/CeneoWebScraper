@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 {% block title %}O autorze projektu{% endblock %}
 {% block content %}
-    <h3>Wykształcenie</h3>
-    <h3>Doświadzenie</h3>
-    <h3>Zainteresowania</h3>
+    <ul class="list-group list-group-flush bg-transparent">
+        <li class="list-group-item bg-transparent"><h3>Wykształcenie</h3></li>
+            <ul class="list-group list-group-flush bg-transparent">
+                <li class="list-group-item bg-transparent"><b>Media BBS</b><br>Hannover</li>
+                <li class="list-group-item bg-transparent"><b>Liceum Goetheschule</b><br>Hannover</li>
+                <li class="list-group-item bg-transparent"><b>LO "U Konarskiego"</b><br>Tarnów</li>
+                <li class="list-group-item bg-transparent"><b>Uniwersytet Ekonomiczny</b><br>Kraków</li>
+            </ul>
+        <li class="list-group-item bg-transparent"><h3>Zainteresowania</h3></li>
+            <ul class="list-group list-group-flush bg-transparent">
+                <li class="list-group-item bg-transparent"><b>Podróże</b></li>
+                <li class="list-group-item bg-transparent"><b>Nawiązywanie nowych znajomości</b></li>
+                <li class="list-group-item bg-transparent"><b>Gry komputerowe</b></li>
+            </ul>
+    </ul>
 {% endblock %}
