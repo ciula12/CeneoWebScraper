@@ -1,5 +1,11 @@
 from app import app
-from flask import render_template
+from flask import render_template, request, redirect, url_for
+from app.utils import get_element, selectors
+import requests
+import json
+import os
+from bs4 import BeautifulSoup
+
 
 @app.route('/')
 @app.route('/index')
@@ -9,9 +15,10 @@ def index():
 @app.route('/extract')
 def extract():
     return render_template('extract.html')
+    
 
-@app.route('/products')
-def products():
+@app.route('/products_list')
+def products_list():
     return render_template('products_list.html')
 
 @app.route('/product')
