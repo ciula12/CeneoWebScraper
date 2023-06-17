@@ -86,18 +86,38 @@ def extract():
     return render_template('extract.html')
 
 @app.route('/products_list')
-def products_list():
-    # lista kodów produktów o których są pobrane opinie
-    # pobranie z plików JSON ze statystykami danych do listy słowników
-    # przekazanie listy złownikow do szablonu HTML
-    return render_template('products_list.html')
+def products_list():    
+    list_opinions = []
+    list_count = []
+    path = f"./app/static/stats"
+    list_opinions = os.listdir(path)
+
+    for x in list_opinions:
+        f = open (f"./app/static/stats/{x}", "r")
+        data = json.loads(f.read())  
+        list_count.append(data['opinions_count'])  
+        
+    return render_template('products_list.html', list_opinions=list_opinions, list_count=list_count)
+
+
+
+
+img = os.path.join('static', 'plots')
+
 @app.route('/product/<product_code>')
 def product(product_code):
-    # pobranie zplików JSON opinii o prosukcie i statystyk o nim
-    # przekazanie opinii i statystyk do szablonu HTML 
+    code = product_code
+    f = open (f"./app/static/opinions/{code}.json", "r", encoding="utf8")
+    data = json.load(f)
     return render_template('product.html', product_code=product_code)
-# routing dla wykresów
-    
+
+
 @app.route('/author')
 def author():
     return render_template('author.html')
+
+    
+img = os.path.join('static', 'plots')
+
+
+    
